@@ -101,5 +101,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+
+  grid-column: 5/13;
 }
 </style>
