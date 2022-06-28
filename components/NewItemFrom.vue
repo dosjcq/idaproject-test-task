@@ -1,5 +1,5 @@
 <template lang="html">
-  <form class="new-item-form">
+  <form class="new-item-form" @submit.prevent="submitForm">
     <div class="input-holder">
       <div class="input-holder__label">
         <label for="title">Наименование товара</label>
@@ -53,6 +53,8 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "NewItemForm",
   data() {
@@ -62,6 +64,18 @@ export default {
       image: "",
       price: "",
     };
+  },
+  methods: {
+    ...mapActions(["addItem"]),
+    submitForm() {
+      console.log("add");
+      this.addItem({
+        image: this.image,
+        title: this.title,
+        desc: this.desc,
+        price: this.price,
+      });
+    },
   },
 };
 </script>
@@ -115,6 +129,7 @@ export default {
   }
 
   .new-item-form__submit-button {
+    cursor: pointer;
     width: 100%;
     padding: 10px 0;
     text-align: center;

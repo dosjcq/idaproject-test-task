@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="items-list">
     <UIBaseCard
-      v-for="item in items"
+      v-for="item in getItems"
       :key="item.id"
       :image="item.image"
       :title="item.title"
@@ -12,86 +12,18 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
   name: "ItemsList",
-
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          image:
-            "https://www.lg.com/ru/images/projectors/md05984180/gallery/medium01.jpg",
-          title: "test",
-          desc: "test",
-          price: 1,
-        },
-        {
-          id: 2,
-          image:
-            "https://www.lg.com/ru/images/projectors/md05984180/gallery/medium01.jpg",
-          title: "test",
-          desc: "test",
-          price: 1,
-        },
-        {
-          id: 3,
-          image:
-            "https://www.lg.com/ru/images/projectors/md05984180/gallery/medium01.jpg",
-          title: "test",
-          desc: "test",
-          price: 1,
-        },
-        {
-          id: 4,
-          image:
-            "https://www.lg.com/ru/images/projectors/md05984180/gallery/medium01.jpg",
-          title: "test",
-          desc: "test",
-          price: 1,
-        },
-        {
-          id: 5,
-          image:
-            "https://www.lg.com/ru/images/projectors/md05984180/gallery/medium01.jpg",
-          title: "test",
-          desc: "test",
-          price: 1,
-        },
-        {
-          id: 6,
-          image:
-            "https://www.lg.com/ru/images/projectors/md05984180/gallery/medium01.jpg",
-          title: "test",
-          desc: "test",
-          price: 1,
-        },
-        {
-          id: 7,
-          image:
-            "https://www.lg.com/ru/images/projectors/md05984180/gallery/medium01.jpg",
-          title: "test",
-          desc: "test",
-          price: 1,
-        },
-        {
-          id: 8,
-          image:
-            "https://www.lg.com/ru/images/projectors/md05984180/gallery/medium01.jpg",
-          title: "test",
-          desc: "test",
-          price: 1,
-        },
-        {
-          id: 9,
-          image:
-            "https://www.lg.com/ru/images/projectors/md05984180/gallery/medium01.jpg",
-          title: "test",
-          desc: "test",
-          price: 1,
-        },
-      ],
-    };
+  computed: {
+    ...mapGetters(["getItems"]),
+  },
+  methods: {
+    ...mapActions(["fetchItems"]),
+  },
+  created() {
+    this.fetchItems("http://localhost:3001/items");
   },
 };
 </script>
