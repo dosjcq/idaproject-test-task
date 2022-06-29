@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="items-list">
+  <div :class="$style.itemsList">
     <UIBaseCard
       v-for="item in getItems"
       :key="item.id"
@@ -29,8 +29,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.items-list {
+<style module lang="scss">
+.itemsList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;

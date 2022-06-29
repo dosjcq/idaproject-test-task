@@ -1,18 +1,18 @@
 <template lang="html">
-  <div class="card-wrapper">
-    <div class="card-wrapper__image-wrapper">
-      <img :src="image" :alt="title" class="card-wrapper__image" />
+  <div :class="$style.cardWrapper">
+    <div :class="$style.cardWrapper__imageWrapper">
+      <img :src="image" :alt="title" :class="$style.cardWrapper__image" />
     </div>
-    <div class="card-wrapper__info">
-      <h3 class="card-wrapper__title">{{ title }}</h3>
-      <p class="card-wrapper__desc">
+    <div :class="$style.cardWrapper__info">
+      <h3 :class="$style.cardWrapper__title">{{ title }}</h3>
+      <p :class="$style.cardWrapper__desc">
         {{ desc }}
       </p>
-      <p class="card-wrapper__price">{{ price }}</p>
+      <p :class="$style.cardWrapper__price">{{ price }}</p>
     </div>
-    <div @click="deleteItem" class="card-wrapper__delete-button">
+    <div @click="deleteItem" :class="$style.cardWrapper__deleteButton">
       <img
-        class="card-wrapper__delete-image"
+        :class="$style.cardWrapper__deleteImage"
         src="../../assets/imgs/delete.svg"
         alt="delete"
       />
@@ -35,50 +35,50 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.card-wrapper {
+<style module lang="scss">
+.cardWrapper {
   background: #fffefb;
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
     0px 6px 10px rgba(0, 0, 0, 0.02);
   border-radius: 4px;
   position: relative;
 
-  .card-wrapper__image-wrapper {
+  .cardWrapper__imageWrapper {
     max-width: 332px;
     max-height: 200px;
 
-    .card-wrapper__image {
+    .cardWrapper__image {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
 
-  .card-wrapper__info {
+  .cardWrapper__info {
     font-family: "Source Sans Pro", sans-serif;
     padding: 16px 16px 24px;
     color: #3f3f3f;
 
-    .card-wrapper__title {
+    .cardWrapper__title {
       font-weight: 600;
       font-size: 20px;
       line-height: 25px;
     }
 
-    .card-wrapper__desc {
+    .cardWrapper__desc {
       font-weight: 400;
       font-size: 16px;
       line-height: 20px;
     }
 
-    .card-wrapper__price {
+    .cardWrapper__price {
       font-weight: 600;
       font-size: 24px;
       line-height: 30px;
     }
   }
 
-  .card-wrapper__delete-button {
+  .cardWrapper__deleteButton {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -98,7 +98,7 @@ export default {
       background: #f05f5f;
     }
 
-    .card-wrapper__delete-image {
+    .cardWrapper__deleteImage {
       width: 100%;
       height: 100%;
     }
