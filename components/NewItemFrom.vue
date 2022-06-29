@@ -1,25 +1,27 @@
 <template lang="html">
-  <form class="new-item-form" @submit.prevent="submitForm">
-    <div class="input-holder">
-      <div class="input-holder__label">
-        <label class="input-holder__label-text" for="title"
+  <form :class="$style.newItemForm" @submit.prevent="submitForm">
+    <div :class="$style.inputHolder">
+      <div :class="$style.inputHolder__label">
+        <label :class="$style.inputHolder__labelText" for="title"
           >Наименование товара</label
         >
-        <span class="circle"></span>
+        <span :class="$style.circle"></span>
       </div>
       <input
         type="text"
         id="title"
         placeholder="Введите наименование товара"
         v-model="form.title"
-        class="input-holder__input"
-        :class="{ formError: formErrors.title }"
+        :class="[
+          formErrors.price ? $style.formError : '',
+          $style.inputHolder__input,
+        ]"
         @focus="changeErrorStatus"
       />
     </div>
-    <div class="input-holder">
-      <div class="input-holder__label">
-        <label class="input-holder__label-text" for="desc"
+    <div :class="$style.inputHolder">
+      <div :class="$style.inputHolder__label">
+        <label :class="$style.inputHolder__labelText" for="desc"
           >Описание товара</label
         >
       </div>
@@ -30,43 +32,51 @@
         rows="7"
         placeholder="Введите описание товара"
         v-model="form.desc"
-        class="input-holder__textarea"
-        @focus="changeErrorStatus"
+        :class="$style.inputHolder__textarea"
       ></textarea>
     </div>
-    <div class="input-holder">
-      <div class="input-holder__label">
-        <label class="input-holder__label-text" for="image"
+    <div :class="$style.inputHolder">
+      <div :class="$style.inputHolder__label">
+        <label :class="$style.inputHolder__labelText" for="image"
           >Ссылка на изображение товара</label
         >
-        <span class="circle"></span>
+        <span :class="$style.circle"></span>
       </div>
       <input
         type="text"
         id="image"
         placeholder="Введите ссылку"
         v-model="form.image"
-        class="input-holder__input"
-        :class="{ formError: formErrors.image }"
+        :class="[
+          formErrors.price ? $style.formError : '',
+          $style.inputHolder__input,
+        ]"
         @focus="changeErrorStatus"
       />
     </div>
-    <div class="input-holder">
-      <div class="input-holder__label">
-        <label class="input-holder__label-text" for="price">Цена товара</label>
-        <span class="circle"></span>
+    <div :class="$style.inputHolder">
+      <div :class="$style.inputHolder__label">
+        <label :class="$style.inputHolder__labelText" for="price"
+          >Цена товара</label
+        >
+        <span :class="$style.circle"></span>
       </div>
       <input
         type="text"
         id="price"
         placeholder="Введите цену"
         v-model="form.price"
-        class="input-holder__input"
-        :class="{ formError: formErrors.price }"
+        :class="[
+          formErrors.price ? $style.formError : '',
+          $style.inputHolder__input,
+        ]"
         @focus="changeErrorStatus"
       />
     </div>
-    <button class="new-item-form__submit-button" :disabled="buttonIsDisabled">
+    <button
+      :class="$style.newItemForm__submitButton"
+      :disabled="buttonIsDisabled"
+    >
       Добавить товар
     </button>
   </form>
@@ -142,8 +152,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.new-item-form {
+<style module lang="scss">
+.newItemForm {
   padding: 24px;
   background: #fffefb;
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
@@ -151,7 +161,7 @@ export default {
   border-radius: 4px;
   grid-column: 1/5;
 
-  .input-holder {
+  .inputHolder {
     display: flex;
     flex-direction: column;
     font-family: "Source Sans Pro", sans-serif;
@@ -161,7 +171,7 @@ export default {
       display: flex;
       margin-bottom: 4px;
 
-      .input-holder__label-text {
+      .inputHolder__labelText {
         font-family: "Source Sans Pro", sans-serif;
         font-weight: 400;
         font-size: 10px;
@@ -182,8 +192,8 @@ export default {
       margin-bottom: 24px;
     }
 
-    .input-holder__input,
-    .input-holder__textarea {
+    .inputHolder__input,
+    .inputHolder__textarea {
       background: #fffefb;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       border-radius: 4px;
@@ -208,18 +218,18 @@ export default {
       border: 1px solid red;
     }
 
-    .input-holder__input {
+    .inputHolder__input {
       padding: 10px 0 11px 16px;
     }
 
-    .input-holder__textarea {
+    .inputHolder__textarea {
       padding: 10px 0 0 16px;
       resize: none;
       height: 98px;
     }
   }
 
-  .new-item-form__submit-button {
+  .newItemForm__submitButton {
     cursor: pointer;
     width: 100%;
     padding: 10px 0;
