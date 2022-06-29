@@ -8,7 +8,7 @@
       <p :class="$style.cardWrapper__desc">
         {{ desc }}
       </p>
-      <p :class="$style.cardWrapper__price">{{ price }}</p>
+      <p :class="$style.cardWrapper__price">{{ price }} руб.</p>
     </div>
     <div @click="deleteItem" :class="$style.cardWrapper__deleteButton">
       <img

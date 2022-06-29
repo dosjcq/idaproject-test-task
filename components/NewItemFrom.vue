@@ -135,7 +135,10 @@ export default {
       if (title || image || price) {
         this.buttonIsDisabled = true;
       } else {
-        this.addItem(this.form);
+        this.addItem({
+          ...this.form,
+          price: this.form.price.replace(/(\d)(?=(\d{3})+([^\d]|$))/g, "$1 "),
+        });
 
         this.formErrors = baseErrorObj;
         this.form = { title: "", desc: "", price: "", image: "" };
