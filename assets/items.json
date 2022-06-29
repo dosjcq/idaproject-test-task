@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "image": "https://www.lg.com/ru/images/projectors/md05984180/gallery/medium01.jpg",
+      "title": "test",
+      "desc": "test",
+      "price": "1000"
+    }
+  ]
+}
