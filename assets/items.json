@@ -1,18 +1,11 @@
 {
   "items": [
     {
-      "id": "d9f12769-6ff5-44ac-bb07-28fa3eb60603",
-      "title": "Проектор acer",
-      "desc": "Очень хороший и классный",
-      "price": "1000000",
-      "image": "https://www.foroffice.ru/upload/iblock/6da/x1127.jpg"
-    },
-    {
-      "id": "1c549b25-a0ab-4b86-aa46-6f6aff9e2447",
-      "title": "Проектор viewsonic",
-      "desc": "Тоже неплохой",
-      "price": "5000",
-      "image": "https://avatars.mds.yandex.net/get-mpic/331398/img_id3407198039957578141.jpeg/orig"
+      "id": "e3d86bc7-a778-4c17-8f25-c05094b296d7",
+      "title": "Проектор LG",
+      "desc": "ничего такой",
+      "price": "10 000 000 000 000 000",
+      "image": "https://www.lg.com/ru/images/projectors/md07524630/gallery/medium01.jpg"
     }
   ]
 }
