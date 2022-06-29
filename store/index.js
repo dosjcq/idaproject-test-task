@@ -64,4 +64,24 @@ export const actions = {
       throw e;
     }
   },
+  async deleteItem({ _, dispatch }, payload) {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/items/${payload.id}`,
+        {
+          method: "DELETE",
+          body: null,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      await dispatch("fetchItems", "http://localhost:3001/items");
+
+      if (!response.ok) {
+        throw new Error(`Could not fetch ${url}, status: ${response.status}`);
+      }
+    } catch (e) {
+      throw e;
+    }
+  },
 };
