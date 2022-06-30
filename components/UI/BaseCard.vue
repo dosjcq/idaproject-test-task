@@ -83,8 +83,8 @@ export default {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -8px;
+    right: -8px;
     max-width: 32px;
     max-height: 32px;
     background: #ff8484;

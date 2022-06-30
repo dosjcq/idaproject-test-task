@@ -262,4 +262,11 @@ export default {
     }
   }
 }
+
+@media (max-width: 1100px) {
+  .newItemForm {
+    grid-column: 1/13;
+    grid-row: 2/3;
+  }
+}
 </style>

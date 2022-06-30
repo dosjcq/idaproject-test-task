@@ -38,6 +38,25 @@ export default {
   grid-column: 5/13;
 }
 
+@media (max-width: 1440px) {
+  .itemsList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .itemsList {
+    grid-column: 1/13;
+    grid-row: 3/4;
+  }
+}
+
+@media (max-width: 480px) {
+  .itemsList {
+    grid-template-columns: 1fr;
+  }
+}
+
 .list {
   &:global(-enter-active) {
     transition: all 0.5s ease-out;
