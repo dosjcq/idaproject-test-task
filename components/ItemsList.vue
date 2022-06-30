@@ -24,7 +24,7 @@ export default {
     ...mapActions(["fetchItems"]),
   },
   created() {
-    this.fetchItems("http://localhost:3001/items");
+    this.fetchItems();
   },
 };
 </script>

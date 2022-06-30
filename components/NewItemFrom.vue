@@ -77,7 +77,7 @@
       :class="$style.newItemForm__submitButton"
       :disabled="buttonIsDisabled"
     >
-      Добавить товар
+      {{ submitIsSuccessfull ? "Товар добавлен" : "Добавить товар" }}
     </button>
   </form>
 </template>
@@ -101,6 +101,7 @@ export default {
         price: false,
         image: false,
       },
+      submitIsSuccessfull: false,
     };
   },
   watch: {
@@ -142,6 +143,10 @@ export default {
 
         this.formErrors = baseErrorObj;
         this.form = { title: "", desc: "", price: "", image: "" };
+        this.submitIsSuccessfull = true;
+        setTimeout(() => {
+          this.submitIsSuccessfull = false;
+        }, 2000);
       }
     },
 
@@ -252,7 +257,7 @@ export default {
       color: #b4b4b4;
     }
 
-    &:hover {
+    &:hover:enabled {
       background-color: #5bac4e;
     }
   }
