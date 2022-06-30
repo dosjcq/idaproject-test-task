@@ -1,5 +1,6 @@
 <template>
   <div :class="$style.container">
+    <TheHeader />
     <NewItemFrom />
     <ItemsList />
   </div>
@@ -8,9 +9,10 @@
 <script>
 import ItemsList from "../components/ItemsList.vue";
 import NewItemFrom from "../components/NewItemFrom.vue";
+import TheHeader from "../components/Layouts/TheHeader.vue";
 export default {
   name: "IndexPage",
-  components: { ItemsList, NewItemFrom },
+  components: { ItemsList, NewItemFrom, TheHeader },
 };
 </script>
 

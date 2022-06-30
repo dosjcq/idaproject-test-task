@@ -6,6 +6,27 @@
       "desc": "ничего такой",
       "price": "10 000 000 000 000 000",
       "image": "https://www.lg.com/ru/images/projectors/md07524630/gallery/medium01.jpg"
+    },
+    {
+      "id": "64650238-dd4a-47e3-8c6e-3e7cf43a46fd",
+      "title": "Проектор классный",
+      "desc": "крутой",
+      "price": "1 000",
+      "image": "https://www.foroffice.ru/upload/iblock/6da/x1127.jpg"
+    },
+    {
+      "id": "1975e2c3-dadc-486a-a3aa-eac68a7ad01f",
+      "title": "Проектор какой-то",
+      "desc": "Мне нравится",
+      "price": "6 000",
+      "image": "https://www.allprojectors.ru/p_img/canon_lv_s300_front.jpg"
+    },
+    {
+      "id": "534cc86e-1b84-4962-93bb-cf3a73e6b905",
+      "title": "Проектор необычный",
+      "desc": "довольно интересный",
+      "price": "7 000",
+      "image": "https://img.audiomania.ru/images/content/how-to-set-your-projector-and-get-best-picture.jpg"
     }
   ]
 }
