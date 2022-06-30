@@ -245,10 +245,15 @@ export default {
     color: #ffffff;
     border-radius: 10px;
     border: none;
+    transition: all 0.5s ease-out;
 
     &:disabled {
       background-color: #eeeeee;
       color: #b4b4b4;
+    }
+
+    &:hover {
+      background-color: #5bac4e;
     }
   }
 }

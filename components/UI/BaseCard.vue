@@ -26,7 +26,6 @@ export default {
   props: ["image", "title", "desc", "price", "id"],
   methods: {
     deleteItem() {
-      console.log(1);
       this.$store.dispatch("deleteItem", {
         id: this.id,
       });

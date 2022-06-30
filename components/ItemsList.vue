@@ -1,5 +1,5 @@
 <template lang="html">
-  <div :class="$style.itemsList">
+  <TransitionGroup :class="$style.itemsList" :name="$style.list" tag="div">
     <UIBaseCard
       v-for="item in getItems"
       :key="item.id"
@@ -9,7 +9,7 @@
       :price="item.price"
       :id="item.id"
     />
-  </div>
+  </TransitionGroup>
 </template>
 
 <script>
@@ -36,5 +36,20 @@ export default {
   gap: 16px;
 
   grid-column: 5/13;
+}
+
+.list {
+  &:global(-enter-active) {
+    transition: all 0.5s ease-out;
+  }
+  &:global(-leave-active) {
+    transition: all 0.5s ease-out;
+  }
+  &:global(-enter-from) {
+    opacity: 0;
+  }
+  &:global(-leave-to) {
+    opacity: 0;
+  }
 }
 </style>
